@@ -14,7 +14,7 @@
 					<h3 style="color: burlywood;">
 						欢迎使用云上幻网
 					</h3><br />
-					<h2 style="color: antiquewhite;">温馨提示：本站为云上幻网中转站，点击下方链接进入资源森林↓↓↓</h2><br />
+					<h2 style="color: antiquewhite;">温馨提示：本站为云上幻网中转站，点击下方链接进入资源森林↓↓↓</h2>
 					<div>
 						<p style="color: bisque;font-size: 20px;">
 							<a href="https://gx-sky.gitee.io/sky009" title="点击前往"
@@ -25,10 +25,14 @@
 					</div>
 					<h3 style="color: burlywood;">【有问题联系我-微信↓↓↓】</h3>
 				</div>
-				
-				<div>
 
+				<div>
 					<img src="./img/WecatQRCode.png" style="width: 300px;" alt="">
+				</div>
+
+				<div>
+					<br/>
+					<span id="show_time" style="color: gold;"></span>
 				</div>
 			</div>
 		</div>
@@ -36,8 +40,43 @@
 		<canvas width="998" height="722" style="background: linear-gradient(rgb(0, 33, 114), rgb(71, 156, 213));">
 		</canvas>
 
-
 		<script src="js/script.js"></script>
+		<script type="text/javascript">
+			function run() {
+				var time = new Date(); //获取系统当前时间
+				var year = time.getFullYear();
+				var month = time.getMonth() + 1;
+				var date = time.getDate(); //系统时间月份中的日
+				var day = time.getDay(); //系统时间中的星期值
+				var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+				var week = weeks[day]; //显示为星期几
+				var hour = time.getHours();
+				var minutes = time.getMinutes();
+				var seconds = time.getSeconds();
+				console.log(seconds);
+				if (month < 10) {
+					month = "0" + month;
+				}
+				if (date < 10) {
+					date = "0" + date;
+				}
+				if (hour < 10) {
+					hour = "0" + hour;
+				}
+				if (minutes < 10) {
+					minutes = "0" + minutes;
+				}
+				if (seconds < 10) {
+					seconds = "0" + seconds;
+				}
 
+				document.getElementById("show_time").innerHTML = year + "-" + month + "-" + date + " " 
+				+ ' ' + hour + ":" + 
+					minutes + ":" + seconds  + ' ' + week ;
+				setTimeout('run()', 1000);
+			}
+
+			run();
+		</script>
 	</body>
 </html>
