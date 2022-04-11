@@ -606,7 +606,7 @@ function arlo_tm_kenburn_slider(){
 
 			slides: [
 				{ src: 'img/hero/1.jpg' },
-				{ src: 'img/hero/2.jpg' },
+				{ src: 'img/hero/myFace.jpg' },
 				{ src: 'img/hero/3.jpg' },
 			]
 
